@@ -31,11 +31,19 @@ def write_data(filename, data):
 
 
 def get_data(filename):
+    """
+    读取指定的文件信息
+    :param filename: 需要读取的文件
+    :return: 返回读取的文件
+    """
     file_path = '../data/' + filename
     with open(file_path) as file:
         data = file.read()
         result = yaml.safe_load(data)
     return result
 
+
+if __name__ == '__main__':
+    write_data("cookie.yaml", get_cookie())
 
 
