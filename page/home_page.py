@@ -2,7 +2,6 @@ from page.add_member_page import AddMemberPage
 from page.address_book_page import AddressBookPage
 from page.base_page import BasePage
 from selenium.webdriver.common.by import By
-import time
 
 
 class HomePage(BasePage):
@@ -38,5 +37,9 @@ class HomePage(BasePage):
         return AddressBookPage(self.driver)
 
     def back_home(self):
-        self.find_element(*self._home).cleck()
+        """
+        返回首页
+        :return:
+        """
+        self.find_element(*self._home).click()
 

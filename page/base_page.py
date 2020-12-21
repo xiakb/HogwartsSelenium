@@ -4,8 +4,8 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
 
-class BasePage(object):
-    def __init__(self, driver=None):
+class BasePage:
+    def __init__(self, driver= None):
         """
         初始化网址与浏览器对象
         :param driver: 接收浏览器对象
