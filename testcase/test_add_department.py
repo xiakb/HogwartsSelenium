@@ -1,4 +1,5 @@
-from home_page import HomePage
+import pytest
+from common.common_fun import *
 from login_page import LoginPage
 
 
@@ -13,15 +14,20 @@ class TestAddDepartment:
     def teardown(self):
         self.main.back_home()
 
-    def test_add_department(self):
+    @pytest.mark.parametrize(
+        "dep",
+        get_data("department.yaml")["dep_name"],
+        ids=get_data("department.yaml")["case_name"]
+    )
+    def test_add_department(self, dep):
         """
         添加部门
         :return:
         """
-        dep = self.main.\
-            goto_address_book().\
+        deps = self.main.\
+            goto_address_list().\
             goto_add_department().\
-            add_department("人事部").\
-            dep_goto_address_book().\
+            add_department(dep).\
+            dep_goto_address_list().\
             get_department()
-        assert "人事部" in dep
+        assert dep in deps

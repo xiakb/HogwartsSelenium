@@ -1,5 +1,6 @@
 import pytest
 from page.start_page import LoginPage
+from common.common_fun import *
 
 
 class TestAddMember:
@@ -13,24 +14,34 @@ class TestAddMember:
     def teardown(self):
         self.main.back_home()
 
-    def test_address_book_add_member(self):
+    @pytest.mark.parametrize(
+        "name, id, phone",
+        get_data("member.yaml")["member_address_list"],
+        ids=get_data("member.yaml")["address_list_case"]
+    )
+    def test_address_book_add_member(self, name, id, phone):
         """
         通讯录页面添加成员
         :return:
         """
         res = self.main.\
-            goto_address_book().\
+            goto_address_list().\
             goto_add_member().\
-            add_member("杉杉", "shan", "15800000002").\
+            add_member(name, id, phone).\
             get_member()
-        assert "杉杉" in res
+        assert name in res
 
-    def test_home_add_member(self):
+    @pytest.mark.parametrize(
+        "name, id, phone",
+        get_data("member.yaml")["member_address_list"],
+        ids=get_data("member.yaml")["address_list_case"]
+    )
+    def test_home_add_member(self, name, id, phone):
         """
         首页添加成员
         :return:
         """
-        res = self.main.home_goto_add_member().add_member("木木", "mu", "15800000001").get_member()
-        assert "木木" in res
+        res = self.main.home_goto_add_member().add_member(name, id, phone).get_member()
+        assert name in res
 
 

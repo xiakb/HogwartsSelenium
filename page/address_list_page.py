@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 
 
-class AddressBookPage(BasePage):
+class AddressListPage(BasePage):
     """
     通讯录页面
     """

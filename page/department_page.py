@@ -8,13 +8,13 @@ class DepartmentPage(BasePage):
     """
     _address_list = (By.ID, "menu_contacts")
 
-    def dep_goto_address_book(self):
+    def dep_goto_address_list(self):
         """
         在首页跳转到通讯录页
         :return: 通讯录页面
         """
-        from address_book_page import AddressBookPage
+        from address_list_page import AddressListPage
         self.find_element(*self._address_list).click()
-        return AddressBookPage(self.driver)
+        return AddressListPage(self.driver)
 
 

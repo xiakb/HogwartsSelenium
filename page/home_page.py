@@ -1,5 +1,5 @@
 from page.add_member_page import AddMemberPage
-from page.address_book_page import AddressBookPage
+from page.address_list_page import AddressListPage
 from page.base_page import BasePage
 from selenium.webdriver.common.by import By
 
@@ -28,13 +28,13 @@ class HomePage(BasePage):
                 pass
         return AddMemberPage(self.driver)
 
-    def goto_address_book(self):
+    def goto_address_list(self):
         """
         在首页跳转到通讯录页
         :return: 通讯录页面
         """
         self.find_element(*self._address_list).click()
-        return AddressBookPage(self.driver)
+        return AddressListPage(self.driver)
 
     def back_home(self):
         """

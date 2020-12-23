@@ -37,7 +37,7 @@ def get_data(filename):
     :return: 返回读取的文件
     """
     file_path = '../data/' + filename
-    with open(file_path) as file:
+    with open(file_path, 'rb') as file:
         data = file.read()
         result = yaml.safe_load(data)
     return result

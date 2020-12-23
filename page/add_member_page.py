@@ -1,4 +1,4 @@
-from page.address_book_page import AddressBookPage
+from page.address_list_page import AddressListPage
 from page.base_page import BasePage
 from selenium.webdriver.common.by import By
 import time
@@ -64,7 +64,7 @@ class AddMemberPage(BasePage):
         time.sleep(1)
         self.click_save()
         time.sleep(1)
-        return AddressBookPage(self.driver)
+        return AddressListPage(self.driver)
 
 
 

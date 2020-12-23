@@ -1,0 +1,6 @@
+dep_name:
+  - '销售部'
+  - '人事部'
+case_name:
+  - 'dep_case_01'
+  - 'dep_case_02'

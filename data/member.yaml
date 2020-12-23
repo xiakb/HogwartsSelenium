@@ -1,0 +1,25 @@
+member_address_list:
+  -
+    - '杉杉'
+    - 'shan'
+    - '15800000001'
+  -
+    - '木木'
+    - 'mumu'
+    - '15800000002'
+address_list_case:
+  - 'address_list_case_01'
+  - 'address_list_case_02'
+
+member_home:
+  -
+    - '彡彡'
+    - 'shanshan'
+    - '15800000003'
+  -
+    - '木彡'
+    - 'mushan'
+    - '15800000004'
+home_case:
+  - 'home_case_01'
+  - 'home_case_02'
