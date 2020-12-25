@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
-    def __init__(self, driver= None):
+    def __init__(self, driver=None):
         """
         初始化网址与浏览器对象
         :param driver: 接收浏览器对象
@@ -37,7 +37,7 @@ class BasePage:
 
     def wait_click(self, locator):
         """
-        显示D等待
+        显示等待
         :param locator: 需要等待的元素
         :return:
         """
